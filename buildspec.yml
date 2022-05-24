@@ -24,7 +24,7 @@ phases:
     - echo Pushing docker image
     - docker push 156962844638.dkr.ecr.us-east-1.amazonaws.com/pms-890536-pensionerdetail:latest
     - echo Writting definition file
-    - printf '[{"name":"pensionerdetail","imageUri":"%s"}]' 156962844638.dkr.ecr.us-east-1.amazonaws.com/pms-890536-pensionerdetail:latest > imagedefinitions.json
+    - printf '[{"name":"pms-pention-dis-rep","imageUri":"%s"}]' 156962844638.dkr.ecr.us-east-1.amazonaws.com/pms-890536-pensionerdetail:latest > imagedefinitions.json
 artifacts:
   files:
-  - pensionerdetail/imagedefinitions.json
+  -PensionerDetail-Microservice/imagedefinitions.json
