@@ -17,14 +17,14 @@ phases:
     - mvn clean
     - echo Building the docker image..
     - docker build -t pms-890536-pensionerdetail .
-    - docker tag pms-890536-pensionerdetail:latest 156962844638.dkr.ecr.us-east-1.amazonaws.com/pms-890536-pensionerdetail:latest
+    - docker tag pms-890536-pensionerdetail:first 156962844638.dkr.ecr.us-east-1.amazonaws.com/pms-890536-pensionerdetail:first
   post_build:
     commands:
     - echo Build completed on `date`
     - echo Pushing docker image
-    - docker push 156962844638.dkr.ecr.us-east-1.amazonaws.com/pms-890536-pensionerdetail:latest
+    - docker push 156962844638.dkr.ecr.us-east-1.amazonaws.com/pms-890536-pensionerdetail:first
     - echo Writting definition file
-    - printf '[{"name":"pensionerdetail-container","imageUri":"%s"}]'  156962844638.dkr.ecr.us-east-1.amazonaws.com/pms-890536-pensionerdetail:latest > imagedefinitions.json
+    - printf '[{"name":"pensionerdetail-container","imageUri":"%s"}]'  156962844638.dkr.ecr.us-east-1.amazonaws.com/pms-890536-pensionerdetail:first > imagedefinitions.json
 artifacts:
   files:
   - pensionerdetail/imagedefinitions.json
