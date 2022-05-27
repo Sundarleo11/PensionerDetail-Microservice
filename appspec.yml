@@ -3,8 +3,8 @@ Resources:
 - TargetService:
 Type: AWS::ECS::Service
 Properties:
-TaskDefinition: "arn:aws:ecs:us-east-1:156962844638:task-definition/pms-890536-pensiondisbursement-TD:1"
+TaskDefinition: "arn:aws:ecs:us-east-1:156962844638:task-definition/pms-890536-pensionerdetail-TD:1"
 LoadBalancerInfo:
-ContainerName: "pms-890536-pensiondisbursement-CTN"
-ContainerPort: 7000
+ContainerName: "pms-890536-pensionerdetail-CNT"
+ContainerPort: 6001
 PlatformVersion: "LATEST"
