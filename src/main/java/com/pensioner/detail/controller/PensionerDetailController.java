@@ -3,11 +3,13 @@ package com.pensioner.detail.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pensioner.detail.exception.AadharNumberNotFound;
@@ -69,6 +71,17 @@ public class PensionerDetailController {
 		
 		
 	}
+	
+	@RequestMapping(value = "/health",method = RequestMethod.GET)
+	public ResponseEntity<?> health() throws Exception {
+	    try {
+	        return ResponseEntity.status(200).body("Ok");
+	    } catch (Exception e) {
+	        return (ResponseEntity<?>) ResponseEntity.status(null);
+	        		//internalServerError().body(e.getMessage());
+	    }
+	}
+	
 	
 
 }
